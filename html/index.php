@@ -46,5 +46,5 @@ try {
 	}
 
 } catch (PDOException $e) {
-exit('ERROR! データベース接続失敗' . $e->getMessage());	
+    exit('ERROR! データベース接続失敗' . $e->getMessage());	
 }
