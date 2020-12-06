@@ -12,7 +12,7 @@ $valueColumn_name = 'value';	//値を変更したいカラム名を代入
 try {
 	$pdo = new PDO($dsn, $db_user, $db_pass);
 	// echo 'データベース接続成功' . PHP_EOL;
-	
+
 	if (isset($_GET['key'])) {
 		$getKey = $_GET['key'];
 
@@ -33,7 +33,7 @@ try {
 			$searchSql .= ' WHERE ' .$keyColumn_name. ' = "' .$getKey.'"';
 
 			$searchStmt = $pdo->query($searchSql);
-	
+
 			if (count($searchStmt->fetchAll()) == 0) {
 				echo 'ERROR! key[' .$getKey. ']は登録されていません';
 			}
@@ -46,5 +46,5 @@ try {
 	}
 
 } catch (PDOException $e) {
-    exit('ERROR! データベース接続失敗' . $e->getMessage());
+	exit('ERROR! データベース接続失敗' . $e->getMessage());	
 }
